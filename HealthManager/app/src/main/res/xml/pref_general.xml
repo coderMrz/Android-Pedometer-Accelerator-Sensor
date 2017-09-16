@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+
+
+    <PreferenceCategory android:title="@string/pref_group_title_personal_settings"
+        android:key="set_local">
+
+        <EditTextPreference
+            android:defaultValue="@string/pref_default_daily_step_goal"
+            android:inputType="number"
+            android:key="@string/pref_daily_step_goal"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="10000"
+            android:title="@string/pref_title_daily_step_goal" />
+        <Preference android:summary="@string/pref_explanation_weight_and_gender"/>
+        <EditTextPreference
+            android:defaultValue="@string/pref_default_weight"
+            android:summary="65.0"
+            android:inputType="numberDecimal"
+            android:key="@string/pref_weight"
+            android:maxLines="1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_title_weight"
+            android:maxLength="6"/>
+        <ListPreference
+            android:defaultValue="@string/pref_default_gender"
+            android:summary="男"
+            android:entries="@array/pref_keys_gender"
+            android:entryValues="@array/pref_values_gender"
+            android:key="@string/pref_gender"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="@string/pref_title_gender"/>
+    </PreferenceCategory>
+</PreferenceScreen>
